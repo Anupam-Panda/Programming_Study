@@ -1,2 +1,0 @@
-# Programming_Study
-Alogorithms
