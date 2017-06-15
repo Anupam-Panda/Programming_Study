@@ -7,6 +7,10 @@ public class LinkedListPalindrome {
 		//Break the List into equal two halves
 		boolean result = true;
 		Node[] pointers = breakLinkedList (head);
+		if (pointers == null) {
+			system.out.println("the List is not proper");
+			return false;
+		}
 		Node firstHalf = pointers[0];
 		Node secondHalf = pointers[1];
 		//reverse the second half
