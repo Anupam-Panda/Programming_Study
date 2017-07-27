@@ -1,5 +1,14 @@
 package com.github.anupam.LinkedList;
 
+/*
+ * Along with the simple logic of checking palindrome
+ * this program contains sample code snippet 
+ * for how to reverse a singly Linked List and
+ * how to divide a singly Linked List into two halves
+ * 
+ * @author Anupam
+ */
+
 public class LinkedListPalindrome {
 	
 	public boolean isPalindrome (Node head) {
@@ -22,7 +31,6 @@ public class LinkedListPalindrome {
 			result = false;
 		}
 		while (temp1 != null && temp2 != null ) {
-			System.out.println("Anupam: temp1:"+temp1.data+" temp2:"+temp2.data);
 			if (temp1.data != temp2.data) {
 				result = false;
 				break;
@@ -41,7 +49,6 @@ public class LinkedListPalindrome {
 	}
 
 	private Node reverseList(Node head) {
-		// TODO Auto-generated method stub
 		Node curr = head;
 		Node prev = null;
 		Node next;
@@ -55,7 +62,6 @@ public class LinkedListPalindrome {
 	}
 
 	private Node[] breakLinkedList(Node head) {
-		// TODO Auto-generated method stub
 		Node[] arr = new Node[2];
 		Node slowPtr = head, fastPtr = head;
 		if (head == null) {
@@ -77,7 +83,6 @@ public class LinkedListPalindrome {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		
 		Node newNode5 = new Node(1);
