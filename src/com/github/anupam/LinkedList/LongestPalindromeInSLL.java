@@ -18,12 +18,40 @@ public class LongestPalindrome {
 
 	public Node longestPal(Node head) {
 
-		Node temp = head;
-		while (temp != null ) {
-			if (isPalindrome(temp)) {
-				return temp;
-			}
+		Node temp = head;int size = 0, tracker = 0;
+		while (temp != null) {
 			temp = temp.next;
+			size++;
+		}
+		temp = head;
+		tracker = size;
+		while (tracker > 1) {
+			while (tracker > 0) {
+				
+				//Start
+				Node anotherPointer = temp;
+				Node head1 = new Node (anotherPointer.data); 
+				Node temp1 = head1;
+				int tempSize = tracker;
+				while (tempSize > 1) {
+					head1.next = new Node(anotherPointer.next.data);
+					head1 = head1.next;
+					anotherPointer = anotherPointer.next;
+					tempSize--;
+				}
+				head1 = temp1;
+				
+				//End
+				
+				if (isPalindrome(head1)) {
+					return head1;
+				}
+				temp = temp.next;
+				tracker--;
+			}
+			temp = head;
+			tracker = size - 1;
+			size = size - 1;
 		}
 
 		return null;
